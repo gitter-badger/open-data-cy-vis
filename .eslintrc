@@ -16,6 +16,7 @@
   "plugins": ["react"],
   "root": true,
   "rules": {
+    "indent": ["warn", 2],
     "semi": ["error", "always"]
   }
 }

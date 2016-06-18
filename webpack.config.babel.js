@@ -14,9 +14,9 @@ let config = {
   output: {path: './dist', filename: 'bundle.js'},
   plugins: [new HtmlWebpackPlugin({template: './src/index.html'})],
   module: {loaders: [
-    {test: /\.js$/, loader: 'babel?presets[]=es2015'},
-    {test: /\.json$/, loader: 'file?name=[name].[ext]'},
-    {test: /\.scss$/, loader: 'style!css!postcss!sass'}
+    {test: /\.js$/, loader: 'babel?presets[]=es2015&react'},
+    {test: /\.scss$/, loader: 'style!css!postcss!sass'},
+    {test: /\.csv$/, loader: 'file?name=[name].[ext]'}
   ]},
   postcss: [assets(), autoprefixer(), svgo()]
 };
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   }, (objValue, srcValue) => _.isArray(objValue) && objValue.concat(srcValue));
 } else {
   config = _.merge(config, {
-    devtool: 'eval-source-map', devServer: {contentBase: './build'}
+    devtool: 'eval-source-map', devServer: {contentBase: './dist'}
   });
 }
 

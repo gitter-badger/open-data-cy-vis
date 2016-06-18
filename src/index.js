@@ -1,9 +1,10 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import App from './components/App';
 
-ReactDOM.render(
-    React.createElement(App, {header: 'Open Data Cyprus'}),
-    document.getElementById('content')
-);
+import '../data/Awarded_CfTs_Jan-May 2016.csv';
+
+
+ReactDOM.render(<App/>, document.getElementById('content'));
