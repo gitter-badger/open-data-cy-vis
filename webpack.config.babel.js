@@ -11,11 +11,11 @@ import svgo from 'postcss-svgo';
 
 let config = {
   entry: './src/index',
-  output: {path: './dist', filename: 'bundle.[hash].js'},
+  output: {path: './dist', filename: 'bundle.js'},
   plugins: [new HtmlWebpackPlugin({template: './src/index.html'})],
   module: {loaders: [
     {test: /\.js$/, loader: 'babel?presets[]=es2015'},
-    {test: /\.json$/, loader: 'file?name=[name].[hash].[ext]'},
+    {test: /\.json$/, loader: 'file?name=[name].[ext]'},
     {test: /\.scss$/, loader: 'style!css!postcss!sass'}
   ]},
   postcss: [assets(), autoprefixer(), svgo()]

@@ -1,1 +1,10 @@
 /node_modules
+
+# IntelliJ IDE
+.idea/
+
+# MacOS fs metadata
+.DS_Store
+
+# Webpack generated files
+dist/
